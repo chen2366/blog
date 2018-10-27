@@ -1,12 +1,12 @@
 #!/bin/bash
 
-apt install wget gcc gcc-c++ make cmake  perl  -y
+apt install wget gcc g++ make cmake  perl  -y
 
 wget http://releases.llvm.org/3.0/llvm-3.0.tar.gz
 wget http://releases.llvm.org/3.0/clang-3.0.tar.gz
 
-tar --no-same-owner -xvf llvm-3.0.tar.gz
-tar --no-same-owner -xvf clang-3.0.tar.xz
+tar --no-same-owner -zxvf llvm-3.0.tar.gz
+tar --no-same-owner -zxvf clang-3.0.tar.gz
 
 mv llvm-3.0.src llvm
 mv clang-3.0.src llvm/tools/clang
