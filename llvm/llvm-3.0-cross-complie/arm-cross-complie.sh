@@ -5,13 +5,12 @@ apt install -y cmake ninja-build gcc-4.7-arm-linux-gnueabihf gcc-4.7-multilib-ar
 
 mkdir -p build
 
-cmake -DCMAKE_CROSSCOMPILING=True \
-	-DCMAKE_INSTALL_PREFIX=/usr/bin \
-	-DLLVM_TABLEGEN=/root/build/bin/llvm-tblgen \
-	-DCLANG_TABLEGEN=/root/build/bin/clang-tblgen \
-	-DLLVM_DEFAULT_TARGET_TRIPLE=arm-linux-gnueabihf \
-	-DLLVM_TARGET_ARCH=ARM \
-	-DLLVM_TARGETS_TO_BUILD=ARM \
-	-DCMAKE_CXX_FLAGS='-march=armv7-a' ../llvm
+cmake \
+    -DCMAKE_CROSSCOMPILING=True \
+    -DCMAKE_INSTALL_PREFIX=/root/alpha \
+    -DLLVM_TABLEGEN=/root/build/bin/llvm-tblgen \
+    -DCLANG_TABLEGEN=/root/build/bin/clang-tblgen \
+    -DLLVM_TARGET_ARCH=Alpha \
+    -DLLVM_TARGETS_TO_BUILD=Alpha ../llvm
 
 make
