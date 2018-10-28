@@ -13,7 +13,7 @@ mv clang-3.0.src llvm/tools/clang
 
 mkdir build
 cd build/
-cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=Off ../llvm/
+cmake -DCMAKE_BUILD_TYPE=Release ../llvm/
 make -j${CPU_NUM}
 make install
 
